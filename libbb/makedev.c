@@ -14,7 +14,10 @@
  || defined(__APPLE__)
 # include <sys/types.h>
 #else
+#if defined(__GLIBC__)
+/* features.h is glibc specific header */
 # include <features.h>
+#endif
 # include <sys/sysmacros.h>
 #endif
 
